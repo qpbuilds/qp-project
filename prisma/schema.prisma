@@ -16,6 +16,7 @@ model User {
   name           String?
   email          String?   @unique
   emailVerified  DateTime?
+  jobTitle       String? 
   image          String?
   hashedPassword String?
   createdAt      DateTime  @default(now())
