@@ -1,5 +1,5 @@
 // Applies next-auth to whole site
 export { default } from "next-auth/middleware"
 
-// Allows public access to homepage and registration
+// Protects only the root currently for development and testing purposes
 export const config = {matcher: ['/']}
