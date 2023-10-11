@@ -58,7 +58,7 @@ export default function Register() {
 
           <p>
             <label htmlFor='confirmation'>Confirm Password:<span aria-label='required'>*</span></label>
-            <input type='confirmation' id='confirmation' name='confirmation' value={formState.confirmation} onChange={updateFormState} required/>
+            <input type='password' id='confirmation' name='confirmation' value={formState.confirmation} onChange={updateFormState} required/>
           </p>
 
           <button type='submit' className="bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded">Create Account</button>

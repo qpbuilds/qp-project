@@ -20,12 +20,19 @@ export async function POST(req: NextRequest){
         // If duplicate exists return 403 forbidden
         if(existingUser){
             console.error(`Error: ${email} already exists`)
-            return NextResponse.json({Error: `${email} already exists`}, { status: 403 })
+            return NextResponse.json({
+                success: 'false', 
+                error: `${email} already exists`
+            }, { status: 403 })
         }
 
     } catch(e) {
-        console.error(e);
-        return NextResponse.json({success: false}, { status: 500 })
+        console.error(`Error checking for duplicate emails: ${e}`);
+        return NextResponse.json(
+            {
+                error: 'server error', 
+                success: false
+            }, { status: 500 })
     }
 
     // Hash Password for security
@@ -41,10 +48,13 @@ export async function POST(req: NextRequest){
                 hashedPassword,
             }
         })
-        return NextResponse.json({email: user.email}, { status: 200 })
+        return NextResponse.json({email: user.email}, { status: 201 })
 
     } catch(e) {
-        console.error(e);
-        return NextResponse.json({success: false}, { status: 500 })
+        console.error(`Error creating user: ${e}`);
+        return NextResponse.json({
+            error: 'server error', 
+            success: false
+        }, { status: 500 })
     }
 }
