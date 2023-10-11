@@ -37,5 +37,13 @@ export const authOptions: NextAuthOptions = {
                 return user
             }
         })
-    ]
+    ],
+    pages: {
+        homePage: '/',
+        login: '/login'
+    },
+    debug: process.env.NODE_ENV === 'development',
+    session: {
+        strategy: 'jwt'
+    },
 }
