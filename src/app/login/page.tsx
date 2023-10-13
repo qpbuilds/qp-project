@@ -34,7 +34,7 @@ export default function Page() {
       ...state,
       redirect: false,
     }).then((callback) => {
-      // if successful, refresh page, when a blog or user is created, page needs to be refreshed for result (GET request) if not will see old state
+      // if successful, refresh page, when a user is created, page needs to be refreshed for result (GET request) if not will see old state
       if (callback?.ok) {
         router.refresh();
       }

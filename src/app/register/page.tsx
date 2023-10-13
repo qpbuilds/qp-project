@@ -1,9 +1,6 @@
 "use client";
-// import Input from "../../../components/input/Input";
+
 import { FormEvent, useState } from "react";
-// import axios from "axios";
-// import { useRouter } from "next/navigation";
-// import Link from "next/link";
 
 export default function Register() {
   interface FormProps {

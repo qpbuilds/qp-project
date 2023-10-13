@@ -1,6 +1,5 @@
 "use client";
 
-// import getCurrentUser from "@/app/actions/getCurrentUser";
 import { SafeUser } from "../../types/index";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
@@ -14,7 +13,7 @@ export default function NavBar({ currentUser }: UserMenuProps) {
   return (
     <header>
       <nav className="bg-gray-200 flex justify-between px-4 py-6 shadow-xl">
-        <div>{currentUser?.name}</div>
+        <div>{currentUser?.firstName}</div>
 
         <div className="flex gap-4">
           <Link href="/">Home</Link>
