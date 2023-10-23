@@ -40,7 +40,7 @@ export default function Page() {
       }
 
       if (callback?.error) {
-        throw new Error("Wrong Credentials");
+        throw new Error(`Wrong Credentials ${callback?.error}`);
       }
     });
     router.push("/");
