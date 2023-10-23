@@ -64,7 +64,7 @@ export default function Page() {
           onChange={handleChange}
           value={state.password}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Log in</button>
       </div>
 
       <div>

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest){
         if(existingUser){
             console.error(`Error: ${email} already exists`)
             return NextResponse.json({
-                success: 'false', 
+                success: 'false',
                 error: `${email} already exists`
             }, { status: 403 })
         }
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest){
         console.error(`Error checking for duplicate emails: ${e}`);
         return NextResponse.json(
             {
-                error: 'server error', 
+                error: 'server error',
                 success: false
             }, { status: 500 })
     }
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest){
     } catch(e) {
         console.error(`Error creating user: ${e}`);
         return NextResponse.json({
-            error: 'server error', 
+            error: 'server error',
             success: false
         }, { status: 500 })
     }

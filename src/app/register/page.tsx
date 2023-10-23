@@ -96,8 +96,14 @@ export default function Register() {
           </p>
 
           <p>
-            <label htmlFor='confirmation'>Confirm Password:<span aria-label='required'>*</span></label>
-            <input type='password' id='confirmation' name='confirmation' value={formState.confirmation} onChange={updateFormState} required/>
+            <label htmlFor='confirmation'>
+              Confirm Password:<span aria-label='required'>*</span>
+            </label>
+            <input
+              type='password'
+              id='confirmation'
+              name='confirmation' value={formState.confirmation} onChange={updateFormState} required
+            />
           </p>
 
           <button
