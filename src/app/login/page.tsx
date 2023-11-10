@@ -40,7 +40,7 @@ export default function Page() {
       }
 
       if (callback?.error) {
-        throw new Error("Wrong Credentials");
+        throw new Error(`Wrong Credentials ${callback?.error}`);
       }
     });
     router.push("/");
@@ -64,13 +64,13 @@ export default function Page() {
           onChange={handleChange}
           value={state.password}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Log in</button>
       </div>
 
       <div>
         <div>
           Have you created an account yet?{" "}
-          <Link href="/register">Register</Link>
+          <Link href="/register">Create Account</Link>
         </div>
       </div>
     </form>
