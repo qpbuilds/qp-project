@@ -51,9 +51,32 @@ export async function POST(req: NextRequest){
         return NextResponse.json({email: user.email}, { status: 201 })
 
     } catch(e) {
-        console.error(`Error creating user: ${e}`);
+        console.error(`Error creating user: ${e}`)
         return NextResponse.json({
-            error: 'server error',
+            error: `server error`,
+            success: false
+        }, { status: 500 })
+    }
+}
+
+export async function GET(req: NextRequest){
+    // Get User Information
+    try {
+        const users = await prisma.user.findMany({ select: 
+            {
+                id: true,
+                email: true,
+                firstName: true,
+                lastName: true,
+                image: true
+            }
+        })
+        console.log(users)
+        return NextResponse.json({users}, { status: 201 })
+    } catch(e){
+        console.error(`Error getting users: ${e}`)
+        return NextResponse.json({
+            error: `server error`,
             success: false
         }, { status: 500 })
     }

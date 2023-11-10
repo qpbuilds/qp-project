@@ -1,4 +1,4 @@
-// TODO DELETE FILE
+// Session Provider Wrapper
 "use client";
 
 import { SessionProvider } from "next-auth/react";

@@ -70,7 +70,7 @@ export default function Page() {
       <div>
         <div>
           Have you created an account yet?{" "}
-          <Link href="/register">Register</Link>
+          <Link href="/register">Create Account</Link>
         </div>
       </div>
     </form>

@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { useSession } from "next-auth/react"; // TODO DELETE
+import { useSession } from "next-auth/react"; // TODO: this is part of testing basic client session set up
 
 export default function Register() {
   interface FormProps {
@@ -35,8 +35,8 @@ export default function Register() {
   function updateFormState(e: any) {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   }
-  const {data: session, status, update } = useSession(); // TODO DELETE
-  console.log('client session', session, status) // TODO DELETE
+  const {data: session, status, update } = useSession(); // TODO: this is part of testing basic client session set up
+  console.log('client session', session, status) // TODO: this is part of testing basic client session set up
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <section className="max-w-sm rounded overflow-hidden shadow-lg flex flex-wrap gap-5 justify-around">

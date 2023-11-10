@@ -2,9 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import NavBar from "../../components/navbar/NavBar";
 import { Inter } from "next/font/google";
-import { authOptions } from "./api/auth/[...nextauth]/authOptions";  // TODO DELETE
-import { getServerSession } from "next-auth";  // TODO DELETE
-import { Provider } from "../../context/provider"; // TODO DELETE
+import { authOptions } from "./api/auth/[...nextauth]/authOptions";  // TODO: this is part of testing basic session set up
+import { getServerSession } from "next-auth";    // TODO: this is part of testing basic session set up
+import { Provider } from "../../context/provider";   // TODO: this is part of testing basic session set up
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +18,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions); // TODO DELETE
-  console.log('session', session); // TODO DELETE
-  // TODO DELETE <Provider> tags
+  const session = await getServerSession(authOptions);   // TODO: this is part of testing basic server session set up
+  console.log('session', session);   // TODO: this is part of testing basic server session set up
+    // TODO:  <Provider> tags is part of testing basic session set up
   return (
     <html lang="en">
       <Provider>
